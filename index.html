@@ -2174,7 +2174,7 @@ npc对话/好感度设置
 &lt;&lt;case 1&gt;&gt;有必要去寻找兰特·克拉玛，或许警局会有他的档案&lt;br&gt;
 &lt;&lt;case 2&gt;&gt;现在知道他的住址了，可以去棕榈街的居民区看看&lt;br&gt;
 &lt;&lt;case 3&gt;&gt;找到了兰特·克拉玛本人&lt;br&gt;
-&lt;&lt;case 4 5 6 7 8 9 10&gt;&gt;从兰特口中得知了真正的凶手，其名为法米拉·克雷西，或许可以去饭馆找科拉和他谈谈&lt;br&gt;
+&lt;&lt;case 4 5 6 7 8 9 10&gt;&gt;从兰特口中得知了真正的凶手，其名为法米拉·克雷西，或许可以去饭馆找科拉和他谈谈……但还是先休息会吧&lt;br&gt;
 &lt;&lt;/switch&gt;&gt;
 &lt;&lt;if $about==true&gt;&gt;这次的案件就此结束了，如果还想继续调查的话……&lt;br&gt;&lt;&lt;/if&gt;&gt;
 &lt;/details&gt;&lt;br&gt;
@@ -2583,6 +2583,8 @@ npc对话/好感度设置
 &lt;&lt;else&gt;&gt;
 哎呀，行动点用完了！
 &lt;&lt;/if&gt;&gt;
+
+
 
 [[因为流程太长懒得打于是非常愤怒的下咒把卡尔·坦那咒死以用来测试有关结局的功能是否实现|……][$note=true;$body= 1;$site= 1;$face=true]]
 [[因为我要测试所以这是一个直接通往好结局的页面|正确结局]]
@@ -3463,7 +3465,20 @@ $place_intor&lt;&lt;if $jumpsleep==1&gt;&gt;&lt;&lt;set $jumpsleep=0&gt;&gt;&lt;
   Dialog.wiki(Story.get(&quot;paper&quot;).processText());
   Dialog.open();&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;if $light==true&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;light&gt;&gt;&quot; t8n&gt;&gt;一个抱持着怀旧审美的设计师设计出的手提灯，外形类似旧时代的手提式煤气灯，作为一台魔力功能的装置，它拥有驱散、照明、烤肉、放火等等功能，为了地下水道而特别设计的这一盏更是拥有自主施法的能力&lt;&lt;/linkappend&gt;&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $crystal==1&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal1&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==2&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal2&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它，它曾是你的一部分，但现在不再是了&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==3&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal3&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它，它曾是你的一部分，但现在不再是了，你还在怀念吗？&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==4&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal4&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，它曾经是你施法的媒介，但你不再拥有施法的能力，它也被你砸碎成了四块……如今它们重聚了&lt;&lt;/linkappend&gt;&gt;
+&lt;&lt;if $crystal==1&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal1&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==2&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal2&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它，它曾是你的一部分，但现在不再是了&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==3&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal3&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，质感很熟悉，你认识它，它曾是你的一部分，但现在不再是了，你还在怀念吗？&lt;&lt;/linkappend&gt;&gt;&lt;&lt;elseif $crystal==4&gt;&gt;&lt;&lt;linkappend &quot;&lt;&lt;crystal4&gt;&gt;&quot; t8n&gt;&gt;一块深蓝色的水晶，它曾经是你施法的媒介，但你不再拥有施法的能力，它也被你砸碎成了四块……如今它们重聚了
+你要砸碎它吗？&lt;div id=&quot;choices&quot;&gt; &lt;&lt;link &quot;砸碎水晶&quot;&gt;&gt;
+        &lt;&lt;replace &quot;#choices&quot;&gt;&gt;
+就像以前做的那样，你用力砸碎了水晶……那些记忆离你而去了
+不知为何，水晶的碎片似乎回到了它们原来的位置
+&lt;&lt;set $crystal=0&gt;&gt;
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+    &lt;&lt;link &quot;不了……&quot;&gt;&gt; 
+        &lt;&lt;replace &quot;#choices&quot;&gt;&gt;
+你凝视着这深蓝色的水晶，破碎的倒影在其中流转……无事发生
+        &lt;&lt;/replace&gt;&gt;
+    &lt;&lt;/link&gt;&gt;
+&lt;/div&gt;&lt;&lt;/linkappend&gt;&gt;
 &lt;&lt;linkappend &quot;&lt;&lt;hatred&gt;&gt;&quot;&gt;&gt;与水晶一同复生的，是你的恨意&lt;&lt;/linkappend&gt;&gt;&lt;&lt;/if&gt;&gt;
 
 
